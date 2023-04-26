@@ -5,7 +5,9 @@ plugins {
 }
 
 group = 'com.rizvi'
+version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
 
 repositories {
     mavenCentral()
@@ -24,6 +26,4 @@ tasks.named('test', Test) {
     useJUnitPlatform()
 }
 
-jar{
-    archivesBaseName('app')
-}
+

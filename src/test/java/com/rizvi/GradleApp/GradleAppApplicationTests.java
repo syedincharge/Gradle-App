@@ -3,7 +3,7 @@ package com.rizvi.GradleApp;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@ExtendsSpringBootTest
+@SpringBootTest
 class GradleAppApplicationTests {
 
 	@Test
