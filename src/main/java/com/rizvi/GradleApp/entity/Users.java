@@ -18,17 +18,22 @@ public class Users  {
     @Column(name = "salary")
     private Float salary;
 
+    @Column(name = "department_id")
+    private int departmentId;
+
 
     public Users() {
         super();
     }
 
-    public Users(int userId, String name, int age, float salary) {
+    public Users(int userId, String name, int age, Float salary, int departmentId) {
         this.userId = userId;
         this.name = name;
         this.age = age;
         this.salary = salary;
+        this.departmentId = departmentId;
     }
+
 
     public int getUserId() {
         return userId;
@@ -54,21 +59,30 @@ public class Users  {
         this.age = age;
     }
 
-    public float getSalary() {
+    public Float getSalary() {
         return salary;
     }
 
-    public void setSalary(float salary) {
+    public void setSalary(Float salary) {
         this.salary = salary;
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
+    public int getDepartmentId() {
+        return departmentId;
+    }
+
+    public void setDepartmentId(int departmentId) {
+        this.departmentId = departmentId;
+    }
+
+    @Override
+    public String toString() {
         return "Users{" +
                 "userId=" + userId +
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 ", salary=" + salary +
+                ", departmentId=" + departmentId +
                 '}';
     }
 }

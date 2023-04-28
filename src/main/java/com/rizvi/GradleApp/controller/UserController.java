@@ -2,6 +2,7 @@ package com.rizvi.GradleApp.controller;
 
 
 import com.rizvi.GradleApp.entity.Users;
+import com.rizvi.GradleApp.response.UserDepartmentResponse;
 import com.rizvi.GradleApp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -67,4 +68,27 @@ public class UserController {
         }
         return new ResponseEntity<Users>(users, HttpStatus.OK);
     }
+
+    @GetMapping("/allUserBySalary/{salary}")
+    public ResponseEntity<List<Users>> getAllUserBySalary(@PathVariable("salary") float salary) {
+        List<Users> users = null;
+        try {
+            users = userService.getUserBySalary(salary);
+        }catch (Exception e) {
+            e.getMessage();
+        }
+        return new ResponseEntity<List<Users>>(users, HttpStatus.OK);
+    }
+
+    @GetMapping("/allUserDepartment")
+    public ResponseEntity<List<UserDepartmentResponse>> getAllUserDepartment() {
+        List<UserDepartmentResponse> users = null;
+        try {
+            users = userService.getUserDepartment();
+        }catch (Exception e) {
+            e.getMessage();
+        }
+        return new ResponseEntity<List<UserDepartmentResponse>>(users, HttpStatus.OK);
+    }
+
 }

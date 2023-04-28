@@ -14,8 +14,4 @@ public class GradleAppApplication {
 
 		SpringApplication.run(GradleAppApplication.class, args);
 	}
-	  @GetMapping("/hello")
-     public String welcome() {
-		return "Hello World";
-	 }
 }
